@@ -1,0 +1,67 @@
+# application-ete.yml
+
+# Spring Boot application configuration for the 'ete' environment
+spring:
+  profiles:
+    active: ete
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ete_db
+    username: ete_user
+    password: securepassword
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 600000
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.example.documentmanagement: DEBUG
+  file:
+    name: logs/ete-application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# External service configurations
+udms:
+  host: http://udms.example.com/api
+  timeout: 5000 # Timeout in milliseconds
+
+# Error handling configurations
+error:
+  handling:
+    enable: true
+    log-errors: true
+    notify-admin: true
+    admin-email: admin@example.com
+
+# Feature-specific configurations
+features:
+  hierarchical-data-display: true
+  distributor-contact-retrieval: true
+
+# Security configurations
+security:
+  enable-csrf: false
+  headers:
+    frame-options: DENY
+
+# Additional configurations
+application:
+  name: Document Management System
+  version: 1.0.0-ete
+  description: Configuration for the 'ete' environment of the Document Management System

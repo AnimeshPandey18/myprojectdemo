@@ -1,0 +1,84 @@
+# Application properties for the cut1 environment
+
+# Server configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Database configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/document_management_cut1
+    username: your_db_username
+    password: your_db_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Unified Data Management System (UDMS) configuration
+udms:
+  host: http://udms.example.com
+  timeout: 5000 # Timeout in milliseconds
+
+# Logging configuration
+logging:
+  level:
+    root: INFO
+    com.example.documentmanagement: DEBUG
+  file:
+    name: logs/document-management-cut1.log
+
+# Exception handling configuration
+exception:
+  handling:
+    enable: true
+    log-errors: true
+
+# Email service configuration
+email:
+  service:
+    host: smtp.example.com
+    port: 587
+    username: your_email_username
+    password: your_email_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# PDF generation configuration
+pdf:
+  generation:
+    output-directory: /var/documents/pdf
+
+# Document management configuration
+document:
+  management:
+    max-upload-size: 10MB
+    allowed-types: [pdf, docx, txt]
+
+# Signature verification configuration
+signature:
+  verification:
+    service-url: http://signature-verification.example.com/api
+
+# Certification status check configuration
+certification:
+  status:
+    check-interval: 24h
+
+# Hierarchical data display configuration
+hierarchical:
+  data:
+    enable: true
+    max-depth: 5
+
+# Ensure all configurations are aligned with the application requirements

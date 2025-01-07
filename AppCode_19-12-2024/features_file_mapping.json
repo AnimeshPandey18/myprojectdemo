@@ -1,0 +1,38 @@
+{
+    "DocumentView": [
+        "react-app/src/components/DocumentView/RichTextEditor.js",
+        "react-app/src/components/DocumentView/DocumentSecurity.js",
+        "react-app/src/components/DocumentView/DocumentCheckout.js",
+        "react-app/src/components/DocumentView/FolderVerification.js",
+        "react-app/src/components/DocumentView/DocumentTableView.js",
+        "react-app/src/components/DocumentView/DocumentTableView.js",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/controller/DocumentController.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/controller/FolderController.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/service/DocumentService.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/service/FolderService.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/exception/GlobalExceptionHandler.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/exception/DocumentNotFoundException.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/exception/UDMSException.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/controller/DocumentControllerTests.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/controller/FolderControllerTests.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/service/DocumentServiceTests.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/service/FolderServiceTests.java"
+    ],
+    "DistributeView": [
+        "react-app/src/components/DistributeView/ManageUserSignatures.js",
+        "react-app/src/components/DistributeView/SendEmailForm.js",
+        "react-app/src/components/DistributeView/EmailSuggestions.js",
+        "react-app/src/components/DistributeView/ComposeEmailForm.js",
+        "react-app/src/components/DistributeView/ConfirmationDialog.js",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/controller/EmailController.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/controller/SignatureController.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/service/EmailService.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/service/SignatureService.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/exception/EmailException.java",
+        "spring-boot-app/src/main/java/com/example/documentmanagement/exception/SignatureException.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/controller/EmailControllerTests.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/controller/SignatureControllerTests.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/service/EmailServiceTests.java",
+        "spring-boot-app/src/test/java/com/example/documentmanagement/service/SignatureServiceTests.java"
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "react-app": {
+        "src": {
+            "index.js": {},
+            "App.js": {},
+            "components": {
+                "DocumentView": {
+                    "RichTextEditor.js": {},
+                    "DocumentSecurity.js": {},
+                    "DocumentCheckout.js": {},
+                    "FolderVerification.js": {},
+                    "DocumentTableView.js": {}
+                },
+                "DistributeView": {
+                    "ManageUserSignatures.js": {},
+                    "SendEmailForm.js": {},
+                    "EmailSuggestions.js": {},
+                    "ComposeEmailForm.js": {},
+                    "ConfirmationDialog.js": {}
+                },
+                "common": {
+                    "Header.js": {},
+                    "Footer.js": {},
+                    "Sidebar.js": {},
+                    "Notification.js": {}
+                }
+            },
+            "services": {
+                "api.js": {}
+            },
+            "styles": {
+                "theme.js": {},
+                "global.css": {}
+            }
+        },
+        "public": {
+            "index.html": {},
+            "favicon.ico": {}
+        },
+        "package.json": {}
+    },
+    "spring-boot-app": {
+        "src": {
+            "main": {
+                "java": {
+                    "com": {
+                        "example": {
+                            "documentmanagement": {
+                                "DocumentManagementApplication.java": {},
+                                "config": {
+                                    "SecurityConfig.java": {}
+                                },
+                                "controller": {
+                                    "DocumentController.java": {},
+                                    "EmailController.java": {},
+                                    "FolderController.java": {},
+                                    "SignatureController.java": {}
+                                },
+                                "model": {
+                                    "Document.java": {},
+                                    "Email.java": {},
+                                    "Folder.java": {},
+                                    "Signature.java": {}
+                                },
+                                "service": {
+                                    "DocumentService.java": {},
+                                    "EmailService.java": {},
+                                    "FolderService.java": {},
+                                    "SignatureService.java": {}
+                                },
+                                "exception": {
+                                    "GlobalExceptionHandler.java": {},
+                                    "DocumentNotFoundException.java": {},
+                                    "EmailException.java": {},
+                                    "SignatureException.java": {},
+                                    "UDMSException.java": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "resources": {
+                    "application-cut1.yml": {},
+                    "application-ete.yml": {},
+                    "application-stg.yml": {},
+                    "application-prd.yml": {},
+                    "messages.properties": {},
+                    "bootstrap.properties": {}
+                }
+            },
+            "test": {
+                "java": {
+                    "com": {
+                        "example": {
+                            "documentmanagement": {
+                                "DocumentManagementApplicationTests.java": {},
+                                "controller": {
+                                    "DocumentControllerTests.java": {},
+                                    "EmailControllerTests.java": {},
+                                    "FolderControllerTests.java": {},
+                                    "SignatureControllerTests.java": {}
+                                },
+                                "service": {
+                                    "DocumentServiceTests.java": {},
+                                    "EmailServiceTests.java": {},
+                                    "FolderServiceTests.java": {},
+                                    "SignatureServiceTests.java": {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "build.gradle": {}
+    }
+}
