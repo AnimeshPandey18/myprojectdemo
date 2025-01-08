@@ -1,0 +1,107 @@
+{
+    "react-app": {
+        "src": {
+            "index.js": {},
+            "App.js": {},
+            "components": {
+                "DocumentView": {
+                    "DocumentView.js": {},
+                    "DistributorContactDetails.js": {},
+                    "UDMSIntegration.js": {},
+                    "DocumentGUID.js": {},
+                    "AccountDocuments.js": {},
+                    "HierarchicalDataTable.js": {}
+                },
+                "DistributeView": {
+                    "DistributeView.js": {},
+                    "PDFGeneration.js": {},
+                    "SignatureRetrieval.js": {},
+                    "SignatureDetails.js": {},
+                    "AllSignatures.js": {},
+                    "EmailComposition.js": {}
+                },
+                "common": {
+                    "Header.js": {},
+                    "Footer.js": {},
+                    "Sidebar.js": {},
+                    "Notification.js": {}
+                }
+            },
+            "services": {
+                "api.js": {},
+                "udmsService.js": {},
+                "documentService.js": {},
+                "emailService.js": {}
+            },
+            "styles": {
+                "App.css": {},
+                "DocumentView.css": {},
+                "DistributeView.css": {},
+                "common.css": {}
+            }
+        },
+        "public": {
+            "index.html": {},
+            "favicon.ico": {}
+        },
+        "package.json": {}
+    },
+    "spring-boot-app": {
+        "src": {
+            "main": {
+                "java": {
+                    "com": {
+                        "example": {
+                            "Application.java": {},
+                            "config": {
+                                "SwaggerConfig.java": {},
+                                "SecurityConfig.java": {}
+                            },
+                            "controller": {
+                                "DocumentController.java": {},
+                                "DistributeController.java": {}
+                            },
+                            "service": {
+                                "DocumentService.java": {},
+                                "DistributeService.java": {},
+                                "UDMSService.java": {},
+                                "EmailService.java": {}
+                            },
+                            "model": {
+                                "Document.java": {},
+                                "DistributorContact.java": {},
+                                "Signature.java": {},
+                                "Email.java": {}
+                            }
+                        }
+                    }
+                },
+                "resources": {
+                    "application-cut1.yml": {},
+                    "application-ete.yml": {},
+                    "application-stg.yml": {},
+                    "application-prd.yml": {},
+                    "messages.properties": {},
+                    "bootstrap.properties": {}
+                }
+            },
+            "test": {
+                "java": {
+                    "com": {
+                        "example": {
+                            "DocumentControllerTest.java": {},
+                            "DistributeControllerTest.java": {},
+                            "service": {
+                                "DocumentServiceTest.java": {},
+                                "DistributeServiceTest.java": {},
+                                "UDMSServiceTest.java": {},
+                                "EmailServiceTest.java": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "build.gradle": {}
+    }
+}

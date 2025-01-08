@@ -1,0 +1,100 @@
+# PRD Environment Configuration
+spring:
+  profiles: prd
+
+  datasource:
+    url: jdbc:postgresql://prd-db-server:5432/your_database
+    username: your_db_username
+    password: your_db_password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# Service URLs and Timeout Configurations
+services:
+  distributor-contact:
+    url: https://prd-distributor-service.example.com/api/v1/contacts
+    timeout: 5000
+
+  udms:
+    base-url: https://prd-udms-service.example.com/api/v1
+    timeout: 5000
+    endpoints:
+      retrieve-document-guid: /documents/guid
+      retrieve-account-documents: /documents/account
+      retrieve-hierarchical-data: /hierarchical-data
+      generate-pdf: /pdf/generate
+      retrieve-signature-by-detail-id: /signatures/detail
+      retrieve-signature-details-by-cna-id: /signatures/cna
+      retrieve-all-signatures-by-cna-id: /signatures/all
+      send-email: /emails/send
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.yourcompany.yourapp: DEBUG
+
+# Email Configuration
+email:
+  smtp:
+    host: smtp.prd-email-server.com
+    port: 587
+    username: your_email_username
+    password: your_email_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+# Security Configuration
+security:
+  jwt:
+    secret: your_jwt_secret_key
+    expiration: 86400
+
+# Additional Configurations
+application:
+  name: YourApplicationName
+  version: 1.0.0
+  environment: production
+
+# Exception Handling Configuration
+exception:
+  handling:
+    default-message: An unexpected error occurred. Please try again later.
+    service-unavailable-message: The service is currently unavailable. Please try again later.
+    invalid-input-message: The provided input is invalid. Please check and try again.
+
+# Cache Configuration
+cache:
+  type: caffeine
+  caffeine:
+    spec: maximumSize=500,expireAfterAccess=600s
+
+# Feature Flags
+features:
+  enable-pdf-generation: true
+  enable-email-sending: true
+  enable-signature-retrieval: true
+  enable-hierarchical-data-view: true

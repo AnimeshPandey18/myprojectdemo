@@ -1,0 +1,90 @@
+# ETE Environment Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ete_db
+    username: ete_user
+    password: securepassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Unified Data Management System (UDMS) Integration
+udms:
+  services:
+    distributorContact:
+      url: https://udms.example.com/api/distributorContact
+      timeout: 5000
+    documentGuid:
+      url: https://udms.example.com/api/documentGuid
+      timeout: 5000
+    accountDocuments:
+      url: https://udms.example.com/api/accountDocuments
+      timeout: 5000
+    hierarchicalData:
+      url: https://udms.example.com/api/hierarchicalData
+      timeout: 5000
+    pdfGeneration:
+      url: https://udms.example.com/api/pdfGeneration
+      timeout: 5000
+    signatureByDetailId:
+      url: https://udms.example.com/api/signatureByDetailId
+      timeout: 5000
+    signatureDetailsByCnaId:
+      url: https://udms.example.com/api/signatureDetailsByCnaId
+      timeout: 5000
+    allSignaturesByCnaId:
+      url: https://udms.example.com/api/allSignaturesByCnaId
+      timeout: 5000
+    emailComposition:
+      url: https://udms.example.com/api/emailComposition
+      timeout: 5000
+
+# Email Configuration
+email:
+  smtp:
+    host: smtp.example.com
+    port: 587
+    username: smtp_user
+    password: securepassword
+  from: no-reply@example.com
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /ete
+
+# Security Configuration
+security:
+  jwt:
+    secret: mySecretKey
+    expiration: 86400000
+
+# Exception Handling Configuration
+exception:
+  messages:
+    invalidAccountNumber: "The provided account number is invalid."
+    externalServiceError: "There was an issue with the external service. Please try again later."
+    documentNotFound: "The requested document was not found."
+    invalidDetailId: "The provided detail ID is invalid."
+    invalidCnaId: "The provided CNA ID is invalid."
+    noSignatureRecords: "No signature records found for the provided CNA ID."
+    pdfGenerationError: "An error occurred while generating the PDF document. Please try again later."
+    emailSendingError: "An error occurred while sending the email. Please try again later."
+
+# Application Specific Properties
+app:
+  name: ETE Application
+  version: 1.0.0
+  description: "This application provides features for retrieving distributor contact details, integrating with UDMS, retrieving document GUIDs, viewing account documents, displaying hierarchical data, generating and downloading PDF documents, retrieving and viewing signatures, and composing and sending emails."

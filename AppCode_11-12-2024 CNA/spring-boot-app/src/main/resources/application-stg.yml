@@ -1,0 +1,108 @@
+# STG Environment Configuration
+spring:
+  profiles: stg
+
+  datasource:
+    url: jdbc:postgresql://stg-db-server:5432/mydatabase
+    username: stg_user
+    password: stg_password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  jackson:
+    serialization:
+      indent_output: true
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    com.mycompany.myapp: DEBUG
+
+# Service URLs and Timeout Configurations
+services:
+  distributor-contact:
+    url: https://stg-distributor-service.mycompany.com/api/v1/contacts
+    timeout: 5000
+
+  udms:
+    url: https://stg-udms-service.mycompany.com/api/v1
+    timeout: 5000
+
+  document-guid:
+    url: https://stg-document-service.mycompany.com/api/v1/guid
+    timeout: 5000
+
+  account-documents:
+    url: https://stg-account-docs-service.mycompany.com/api/v1/documents
+    timeout: 5000
+
+  hierarchical-data:
+    url: https://stg-hierarchical-data-service.mycompany.com/api/v1/data
+    timeout: 5000
+
+  pdf-generation:
+    url: https://stg-pdf-service.mycompany.com/api/v1/generate
+    timeout: 5000
+
+  signature-retrieval:
+    url: https://stg-signature-service.mycompany.com/api/v1/signatures
+    timeout: 5000
+
+  email-service:
+    url: https://stg-email-service.mycompany.com/api/v1/send
+    timeout: 5000
+
+# Additional Environment-Specific Properties
+application:
+  name: MyApplication
+  version: 1.0.0-stg
+  description: Configuration settings for the staging environment
+
+# Security Configurations
+security:
+  jwt:
+    secret: my-stg-secret-key
+    expiration: 3600000
+
+# Exception Handling Configurations
+exception:
+  handling:
+    default-message: An unexpected error occurred. Please try again later.
+    service-unavailable-message: The service is currently unavailable. Please try again later.
+    invalid-input-message: The provided input is invalid. Please check and try again.
+
+# Email Configuration
+email:
+  sender:
+    address: no-reply@mycompany.com
+    name: MyCompany Support
+  smtp:
+    host: smtp.stg.mycompany.com
+    port: 587
+    username: smtp_user
+    password: smtp_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

@@ -1,0 +1,96 @@
+# CUT1 Environment Configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cut1_db
+    username: cut1_user
+    password: cut1_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Service URLs and Timeout Values
+udms:
+  service:
+    url: https://udms-service.cut1.example.com
+    timeout: 5000
+
+# Distributor Contact Details Service
+distributor:
+  service:
+    url: https://distributor-service.cut1.example.com
+    timeout: 3000
+
+# Document Service
+document:
+  service:
+    url: https://document-service.cut1.example.com
+    timeout: 4000
+
+# Signature Service
+signature:
+  service:
+    url: https://signature-service.cut1.example.com
+    timeout: 3000
+
+# Email Service
+email:
+  service:
+    url: https://email-service.cut1.example.com
+    timeout: 3000
+
+# PDF Generation Service
+pdf:
+  service:
+    url: https://pdf-service.cut1.example.com
+    timeout: 5000
+
+# Hierarchical Data Service
+hierarchical:
+  service:
+    url: https://hierarchical-service.cut1.example.com
+    timeout: 3000
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG
+
+# Server Configuration
+server:
+  port: 8080
+  servlet:
+    context-path: /cut1
+
+# Security Configuration
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: cut1-client-id
+      client-secret: cut1-client-secret
+      access-token-uri: https://auth.cut1.example.com/oauth/token
+      user-authorization-uri: https://auth.cut1.example.com/oauth/authorize
+      scope: read,write
+      grant-type: authorization_code
+      redirect-uri: https://cut1.example.com/login/oauth2/code/cut1
+
+# Exception Handling Configuration
+exception:
+  handling:
+    enable: true
+    log-level: ERROR
+    notify-admin: true
+    admin-email: admin@cut1.example.com
+
+# Application Specific Properties
+application:
+  name: CUT1 Application
+  version: 1.0.0
+  description: Configuration settings for the CUT1 environment
